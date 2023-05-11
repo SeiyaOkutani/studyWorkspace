@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+</head>
+<body>
+	<h3>編集</h3>
+	<form th:action="@{/process2}" th:object="${employee}" method="post">
+		<input type="hidden" th:field="*{id}"> 
+		
+		<label for="name">名前</label>
+		<input type="text" class="form-control" th:errorclass="is-invalid" th:field="*{name}">
+		<div class="invalid-feedback" th:errors="*{name}"></div>
+		
+		<br><label for="department">部署名</label> 
+		<select class="form-select" th:field="*{departmentName}">
+			<th:block th:each="department : ${@departmentRepository.findAll()}">
+				<option th:value="${department.name}" th:text="${department.name}"></option>
+			</th:block>
+		</select><br>
+
+		<button><span class="text">保存</span></button>
+	</form>
+</body>
+</html>

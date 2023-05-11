@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+</head>
+<body>
+	<h3>社員一覧</h3>
+	<div th:if="${emp.size() == 0}">該当データがありません</div>
+
+	<table th:if="${emp.size() > 0}" border="1">
+		<tr><th>番号</th><th>名前</th><th>部署名</th></tr>
+		<tr th:each="employee : ${emp}" th:object="${employee}">
+			<td th:text="*{id}"></td>
+			<td th:text="*{name}"></td>
+			<td th:text="*{departmentName}"></td>
+			<td><a th:href="@{/edit(id=*{id})}">編集</a>
+				<a th:href="@{/del(id=*{id})}">削除</a>
+			</td>
+		</tr>
+	</table>
+
+	<br><a th:href="@{/add}">社員登録</a>
+</body>
+</html>
