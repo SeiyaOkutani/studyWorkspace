@@ -1,0 +1,5 @@
+# macOSの.DS_Storeファイルを除外
+.DS_Store
+
+# Windowsのシステムファイルを除外
+Thumbs.db
