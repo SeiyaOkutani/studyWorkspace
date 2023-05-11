@@ -35,4 +35,4 @@ public class DepartmentSet implements ApplicationRunner { // ApplicationRunner„Å
 		List<Department> list = repository.findAll();
 		list.forEach(a -> System.out.println(a.getId() + "," + a.getName()));
 	}
-}
+}//
