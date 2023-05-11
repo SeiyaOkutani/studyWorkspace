@@ -21,4 +21,3 @@ public class Department {
 	@Size(max = 40)
 	private String name;
 }
-//
