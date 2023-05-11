@@ -10,4 +10,4 @@ public class StudyH2JpaApplication {
 		SpringApplication.run(StudyH2JpaApplication.class, args);
 	}
 
-}
+}//
