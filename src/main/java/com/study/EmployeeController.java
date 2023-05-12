@@ -47,6 +47,7 @@ public class EmployeeController {
 		//編集画面遷移
 		Optional<Employee> optionalEmployee = repository.findById(id);
 		//java.util.Optionalは「nullかもしれない値」を上手に取り扱うためのクラス
+		//値をラップし、その値がnullかもしれないことを表現する
 		Employee employee = optionalEmployee.get();
 		model.addAttribute("employee", employee);
 		return "edit";
@@ -69,4 +70,4 @@ public class EmployeeController {
 		return "redirect:/";
 	}
 
-}//
+}

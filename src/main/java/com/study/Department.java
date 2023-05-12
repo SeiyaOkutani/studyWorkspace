@@ -20,4 +20,4 @@ public class Department {
 	@NotBlank
 	@Size(max = 40)
 	private String name;
-}//
+}
